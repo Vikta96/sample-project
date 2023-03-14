@@ -1,0 +1,39 @@
+# This program calculates the sum and average of a list of numbers.
+
+def calculate_sum(numbers):
+    total = 0
+    for number in numbers:
+        total += number
+    return total
+
+def calculate_average(numbers):
+    return calculate_sum(numbers) / len(numbers)
+
+numbers = [1, 2, 3, 4, 5]
+print("Numbers: ", numbers)
+print("Sum: ", calculate_sum(numbers)) # Expected output: 15
+print("Average: ", calculate_average(numbers)) # Expected output: 3.0
+
+# Test with empty list
+empty_list = []
+print("Numbers: ", empty_list)
+print("Sum: ", calculate_sum(empty_list)) # Expected output: 0
+print("Average: ", calculate_average(empty_list)) # Expected output: 0
+
+# Test with negative numbers
+negative_numbers = [-1, -2, -3, -4, -5]
+print("Numbers: ", negative_numbers)
+print("Sum: ", calculate_sum(negative_numbers)) # Expected output: -15
+print("Average: ", calculate_average(negative_numbers)) # Expected output: -3.0
+
+# Test with decimal numbers
+decimal_numbers = [0.5, 1.5, 2.5, 3.5, 4.5]
+print("Numbers: ", decimal_numbers)
+print("Sum: ", calculate_sum(decimal_numbers)) # Expected output: 13.5
+print("Average: ", calculate_average(decimal_numbers)) # Expected output: 2.7
+
+# Test with large list of numbers
+large_list = list(range(1, 101))
+print("Numbers: ", large_list)
+print("Sum: ", calculate_sum(large_list)) # Expected output: 5050
+print("Average: ", calculate_average(large_list)) # Expected output: 50.5
