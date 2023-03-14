@@ -1,0 +1,14 @@
+import subprocess
+
+# Define the name of the program to compile
+program_name = "hello_world.py"
+
+# Define the command to compile the program
+compile_command = ["python", "-m", "py_compile", program_name]
+
+# Call the subprocess to execute the compile command
+try:
+    result = subprocess.run(compile_command, capture_output=True, check=True, text=True)
+    print("Compilation successful:", result.stdout.strip())
+except subprocess.CalledProcessError as e:
+    print("Compilation failed:", e.stderr.strip())
